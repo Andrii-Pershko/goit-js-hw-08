@@ -34,7 +34,6 @@ function onSubmitBtn(e) {
     e.preventDefault();
     // якщо при натисканні кнопки сабміт немає данних в полі емайл продовжуємо код, якщо є, відправляємо данні та стираємо поля і наші данні в локар сторедж
     if (dataLocalKey.email !== undefined) {
-        console.log('you click')
         console.log(dataLocalKey.email)
         // якщо в полі меседж пусто продовєжуємо код
         if (dataLocalKey.message !== undefined) {
