@@ -32,14 +32,20 @@ function saveInputInLocalStorege(e) {
 //колбек, при натискані на сабміт виводимо в консоль данні форми та стираємо поля вводу та чистимо локал сторедж
 function onSubmitBtn(e) {
     e.preventDefault();
+    if (dataLocalKey.email === undefined) {
+        alert
+    }
+
     // якщо при натисканні кнопки сабміт немає данних в полі емайл продовжуємо код, якщо є, відправляємо данні та стираємо поля і наші данні в локар сторедж
     if (dataLocalKey.email !== undefined) {
-        console.log(dataLocalKey.email)
+        console.log(`Емейл користувача: ${dataLocalKey.email}`)
         // якщо в полі меседж пусто продовєжуємо код
         if (dataLocalKey.message !== undefined) {
-            console.log(dataLocalKey.message)
+            console.log(`Коментар користувача: ${dataLocalKey.message}`)
         }
 
+        //чистимо локальні, "сховище коду", та форми
+        dataLocalKey = {};
         localStorage.removeItem(LOCAL_KEY);
         e.currentTarget.reset();
     }
